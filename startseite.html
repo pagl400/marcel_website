@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marcel Gießwein – Grüner Bürgermeisterkandidat für Schwelm</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+    :root {
+      --klee:      #008939;
+      --white:     #FFFFFF;
+      --sand:      #F5F1E9;
+      --black:     #201D1B;
+      --content-w: 900px;
+    }
+
+    /* Sunflower-Theme Fonts */
+    @font-face {
+      font-family: 'GrueneType';
+      src: url('assets/fonts/GrueneType-BlackCondensedItalic.woff2') format('woff2'),
+           url('assets/fonts/GrueneType-BlackCondensedItalic.ttf') format('truetype');
+      font-weight: 900; font-style: normal;
+    }
+    @font-face {
+      font-family: 'PT Sans';
+      src: url('assets/fonts/pt-sans-v17-latin_latin-ext-regular.woff2') format('woff2'),
+           url('assets/fonts/pt-sans-v17-latin_latin-ext-regular.ttf') format('truetype');
+      font-weight: 400; font-style: normal;
+    }
+    @font-face {
+      font-family: 'PT Sans';
+      src: url('assets/fonts/pt-sans-v17-latin_latin-ext-700.woff2') format('woff2'),
+           url('assets/fonts/pt-sans-v17-latin_latin-ext-700.ttf') format('truetype');
+      font-weight: 700; font-style: normal;
+    }
+
+    /* Reset & Base Styles */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 100%; }
+    body {
+      font-family: 'PT Sans', sans-serif;
+      font-size: 1.125rem;
+      background: var(--sand);
+      color: var(--black);
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    .container {
+      max-width: var(--content-w);
+      margin: auto;
+      padding: 0 1rem;
+    }
+
+    /* Header */
+    header { background: var(--klee); color: var(--white); }
+    .header-inner {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.5rem 1rem; justify-content: flex-start;
+    }
+    .logo { width: 40px; flex-shrink: 0; }
+    .header-text h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      text-transform: uppercase;
+      line-height: 1;
+      margin: 0;
+    }
+    .subtitle {
+      font-family: 'PT Sans'; font-size: 1rem; font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    /* Über mich */
+    #about { padding: 2rem 0; }
+    .about-grid {
+      display: grid; grid-template-columns: 45% 55%; gap: 2.5rem; align-items: center;
+    }
+    .about-photo img { border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    .about-text h2 {
+      font-family: 'GrueneType'; font-size: 2rem; color: var(--klee);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Ich bin */
+    #traits { padding: 2rem 0; }
+    #traits h2 {
+      font-family: 'GrueneType'; font-size: 2rem; color: var(--klee);
+      margin-bottom: 0.5rem;
+    }
+    #traits p { margin-bottom: 1rem; }
+
+    /* Fokus-Grid für Schwerpunkte */
+    #goals { background: var(--klee); color: var(--white);
+      padding: 2rem 0; width: 100vw; position: relative; left:50%; margin-left:-50vw;
+    }
+    #goals .container { max-width: var(--content-w); margin: auto; padding: 0 1rem; }
+    #goals h2 { font-family: 'GrueneType'; font-size: 2rem; margin-bottom: 1rem; }
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .focus-card {
+      background: var(--sand);
+      color: var(--klee);
+      padding: 1rem 2rem; /* nur seitlich mehr Platz */
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      font-size: 1.125rem; /* Originalgröße wiederhergestellt */
+      font-weight: bold;
+    }
+
+    /* Mehr zu mir */
+    #more { padding: 2rem 0; text-align: center; }
+    #more h2 {
+      font-family: 'GrueneType'; font-size: 2rem; color: var(--black);
+      margin-bottom: 1rem;
+    }
+    .social-item { display: inline-block; margin: 0 1rem; text-align: center; }
+    .social-item img { width: 100px; margin-bottom: 0.5rem; }
+
+    /* Kontakt */
+    #contact { padding: 2rem 0; }
+    #contact h2 {
+      font-family: 'GrueneType'; font-size: 2rem; color: var(--klee);
+      margin-bottom: 0.5rem;
+    }
+    #contact p { font-size: 1.125rem; }
+
+    /* Footer */
+    footer {
+      background: var(--sand); text-align: center; padding: 1rem;
+      font-size: 1rem;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .header-inner{flex-direction:column;align-items:flex-start;}
+      .about-grid{grid-template-columns:1fr;text-align:center;}
+      #goals{left:0;margin-left:0;margin-right:0;width:100%;}
+      .focus-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-inner container">
+      <img src="assets/img/sunflower.svg" alt="Logo" class="logo">
+      <div class="header-text">
+        <h1>Marcel Gießwein</h1>
+        <p class="subtitle">Grüner Bürgermeisterkandidat für Schwelm</p>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="container">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="assets/img/Marcel.jpg" alt="Portrait Marcel Gießwein">
+      </div>
+      <div class="about-text">
+        <h2>Über mich</h2>
+        <ul>
+          <li>🌿 <strong>Progressiv & Klar</strong><br>„Klimaschutz ist kein „kann, wenn es passt“, sondern eine absolute Notwendigkeit!“</li>
+          <li>💚 <strong>Grün & Bürgernah</strong><br>„Heimat gestalten. Miteinander leben.“</li>
+          <li>🚀 <strong>Mutig & Motiviert</strong><br>„Verändern, was bremst. Fördern, was trägt.“</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="traits" class="container">
+    <h2>Ich bin</h2>
+    <p>Ich möchte mit Weitsicht, Empathie und Klarheit endlich einen echten Wandel bewirken – für eine lebendige, klimabewusste und soziale Stadt. Der Stillstand der letzten Jahre muss überwunden und in eine positive Entwicklung verwandelt werden. Schwelm hat enormes Potenzial, das wir ausschöpfen müssen, anstatt es auszubremsen.</p>
+    <p>Mein Name ist Marcel Gießwein, ich bin 45 Jahre alt und engagiere mich seit vielen Jahren aktiv für unsere Stadt. Als gebürtiger Schwelmer und langjähriges Ratsmitglied kenne ich die Bedürfnisse und Wünsche unserer Bürgerinnen und Bürger sehr gut. Mein Ziel ist es, frischen Wind ins Rathaus zu bringen und nachhaltige Lösungen für die Zukunft unserer Stadt zu schaffen. Es gilt, vom „das geht nicht, weil…“ der letzten Jahre zu einem gemeinsamen „…, so kann es gelingen“ zu kommen. Dafür braucht es eine Verwaltung, die Ratsbeschlüsse und die Anliegen der Bürger*innen ernst nimmt und konsequent umsetzt.</p>
+  </section>
+
+  <section id="goals">
+    <div class="container">
+      <h2>Meine Schwerpunkte</h2>
+      <div class="focus-grid">
+        <div class="focus-card">Bezahlbarer Wohnraum für alle</div>
+        <div class="focus-card">Mehr Grünflächen und nachhaltige Mobilität</div>
+        <div class="focus-card">Digitale Verwaltung & Bürgernähe</div>
+        <div class="focus-card">Bildung in den Mittelpunkt stellen</div>
+        <div class="focus-card">Stärkung von Sport, Kultur und Ehrenamt</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="more" class="container">
+    <h2>Mehr zu mir</h2>
+    <p>Folgen Sie gerne meinen Social-Media-Kanälen:</p>
+    <div class="social-item">
+      <img src="assets/img/qr-facebook.png" alt="Facebook QR-Code">
+      <a href="#" target="_blank">Facebook</a>
+    </div>
+    <div class="social-item">
+      <img src="assets/img/qr-instagram.png" alt="Instagram QR-Code">
+      <a href="#" target="_blank">Instagram</a>
+    </div>
+    <div class="social-item">
+      <img src="assets/img/qr-tiktok.png" alt="TikTok QR-Code">
+      <a href="#" target="_blank">TikTok</a>
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <h2>Kontakt</h2>
+    <p>Sie möchten mit mir in Kontakt treten? Schreiben Sie mir gerne eine E-Mail an <a href="mailto:kontakt@marcel-giesswein.de">kontakt@marcel-giesswein.de</a> oder eine Nachricht auf meinen Social-Kanälen.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Marcel Gießwein – Bündnis 90/Die Grünen Schwelm</p>
+  </footer>
+</body>
+</html>
