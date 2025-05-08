@@ -5,34 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marcel Gießwein – Grüner Bürgermeisterkandidat für Schwelm</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
-    :root {
-      --klee:      #008939;
-      --white:     #FFFFFF;
-      --sand:      #F5F1E9;
-      --black:     #201D1B;
-      --content-w: 900px;
-    }
+/* Self-hosted Oswald */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('assets/fonts/Oswald-Bold.woff2') format('woff2'),
+       url('assets/fonts/Oswald-Bold.ttf')  format('truetype');
+}
 
-    /* Sunflower-Theme Fonts */
-    @font-face {
-      font-family: 'GrueneType';
-      src: url('assets/fonts/GrueneType-BlackCondensedItalic.woff2') format('woff2'),
-           url('assets/fonts/GrueneType-BlackCondensedItalic.ttf') format('truetype');
-      font-weight: 900; font-style: normal;
-    }
-    @font-face {
-      font-family: 'PT Sans';
-      src: url('assets/fonts/pt-sans-v17-latin_latin-ext-regular.woff2') format('woff2'),
-           url('assets/fonts/pt-sans-v17-latin_latin-ext-regular.ttf') format('truetype');
-      font-weight: 400; font-style: normal;
-    }
-    @font-face {
-      font-family: 'PT Sans';
-      src: url('assets/fonts/pt-sans-v17-latin_latin-ext-700.woff2') format('woff2'),
-           url('assets/fonts/pt-sans-v17-latin_latin-ext-700.ttf') format('truetype');
-      font-weight: 700; font-style: normal;
-    }
+:root {
+  --klee:      #008939;
+  --white:     #FFFFFF;
+  --sand:      #F5F1E9;
+  --black:     #201D1B;
+  --content-w: 900px;
+}
+
+/* Sunflower-Theme Fonts */
+@font-face {
+  font-family: 'GrueneType';
+  src: url('assets/fonts/GrueneType-BlackCondensedItalic.woff2') format('woff2'),
+       url('assets/fonts/GrueneType-BlackCondensedItalic.ttf')  format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  src: url('assets/fonts/pt-sans-v17-latin_latin-ext-regular.woff2') format('woff2'),
+       url('assets/fonts/pt-sans-v17-latin_latin-ext-regular.ttf')  format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  src: url('assets/fonts/pt-sans-v17-latin_latin-ext-700.woff2') format('woff2'),
+       url('assets/fonts/pt-sans-v17-latin_latin-ext-700.ttf')  format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
 
     /* Reset & Base Styles */
     * { box-sizing: border-box; margin: 0; padding: 0; }
