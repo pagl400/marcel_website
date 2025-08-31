@@ -114,6 +114,18 @@
     .video-notice a:hover{text-decoration:underline}
     .btn-video-accept{background: var(--brand);color:#fff;padding:12px 18px;border-radius:999px;border:none;font-weight:700;font-family: 'PT Sans', sans-serif;cursor:pointer;transition: all 0.3s ease}
     .btn-video-accept:hover{background: var(--brand-700)}
+    @media (max-width: 768px){
+      .video-notice{padding:16px;margin:10px;max-width:90%}
+      .video-notice h3{font-size:1.1rem;margin-bottom:8px}
+      .video-notice p{font-size:0.8rem;margin-bottom:12px}
+      .btn-video-accept{padding:10px 14px;font-size:0.9rem}
+    }
+    @media (max-width: 480px){
+      .video-notice{padding:12px;margin:8px;max-width:95%}
+      .video-notice h3{font-size:1rem;margin-bottom:6px}
+      .video-notice p{font-size:0.75rem;margin-bottom:10px;line-height:1.4}
+      .btn-video-accept{padding:8px 12px;font-size:0.85rem}
+    }
     .pdf-section{background:#fff;border-radius: var(--radius);border:1px solid rgba(15,23,42,.06);box-shadow: var(--shadow-sm);overflow:hidden;margin-top:24px}
     .pdf-toggle{width:100%;background: var(--accent-yellow);color: var(--brand-700);border:none;padding:16px 20px;font-size:1.1rem;font-weight:700;font-family: 'Gotham XNarrow', sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition: all 0.3s ease}
     .pdf-toggle:hover{filter: brightness(0.98)}
