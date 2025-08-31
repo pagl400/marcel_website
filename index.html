@@ -135,6 +135,7 @@
     .pdf-fallback{padding:20px;text-align:center;background: var(--surface)}
     .pdf-fallback a{color: var(--brand);text-decoration:none;font-weight:700}
     .pdf-fallback a:hover{text-decoration:underline}
+    .mobile-hint{font-size:0.8rem;color: var(--muted);margin-top:8px;font-style:italic}
     @media (max-width: 768px){
       .pdf-fallback{padding:16px 12px;font-size:0.9rem}
       .pdf-fallback p{line-height:1.5}
@@ -176,7 +177,19 @@
       
       // Lade oder entlade das PDF je nach Zustand
       if (content.classList.contains('open')) {
-        iframe.src = 'assets/pdf/Marcel_Giesswein_fleyer.pdf';
+        // Prüfe ob es ein mobiles Gerät ist
+        const isMobile = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        if (isMobile) {
+          // Auf mobilen Geräten: Öffne PDF in neuem Tab
+          window.open('assets/pdf/Marcel_Giesswein_fleyer.pdf', '_blank');
+          // Klappe das Accordion wieder zu
+          toggle.classList.remove('active');
+          content.classList.remove('open');
+        } else {
+          // Auf Desktop: Zeige PDF im iframe
+          iframe.src = 'assets/pdf/Marcel_Giesswein_fleyer.pdf';
+        }
       } else {
         iframe.src = '';
       }
@@ -230,6 +243,7 @@
         </iframe>
         <div class="pdf-fallback">
           <p>Ihr Browser unterstützt keine PDF-Anzeige. <a href="assets/pdf/Marcel_Giesswein_fleyer.pdf" target="_blank">Klicken Sie hier, um das PDF herunterzuladen</a>.</p>
+          <p class="mobile-hint">Auf mobilen Geräten wird das PDF automatisch in einem neuen Tab geöffnet.</p>
         </div>
       </div>
     </div>
