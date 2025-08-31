@@ -81,7 +81,7 @@
     .btn-header{background: rgba(255,255,255,.1);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700;font-family: 'PT Sans', sans-serif;text-decoration:none;transition:.2s ease}
     .btn-header:hover{background: rgba(255,255,255,.2)}
     .hero{background: linear-gradient(180deg, #ffffff, var(--surface))}
-    .hero-inner{max-width:var(--container);margin:0 auto;padding: clamp(28px, 7vw, 72px) 20px;display:grid;grid-template-columns: 1.05fr .95fr;gap: var(--space);align-items:center}
+    .hero-inner{max-width:var(--container);margin:0 auto;padding: clamp(28px, 7vw, 72px) 20px clamp(2px, 0.5vw, 4px) 20px;display:grid;grid-template-columns: 1.05fr .95fr;gap: var(--space);align-items:center}
     @media (max-width: 860px){.hero-inner{grid-template-columns:1fr;text-align:center}}
     h1{font-size: clamp(28px, 5.2vw, 56px);line-height:1.2;margin-bottom:12px;font-family: 'Gotham XNarrow', sans-serif;font-weight:900;letter-spacing:0.5px;}
     .lead{color:var(--muted);margin-bottom:18px;font-size: clamp(16px, 2vw, 20px);font-family: 'PT Sans', sans-serif;}
@@ -91,6 +91,7 @@
     .btn{display:inline-flex;align-items:center;gap:10px;background: var(--accent-yellow);color: var(--brand-700);padding:12px 18px;border-radius:999px;font-weight:700;font-family: 'PT Sans', sans-serif;text-decoration:none;box-shadow: var(--shadow-sm)}
     .btn:hover{filter: brightness(0.98)}
     section{max-width:var(--container);margin:0 auto;padding: clamp(32px, 6vw, 64px) 20px;}
+    #programm{padding: clamp(2px, 0.5vw, 4px) 20px;}
     h2{font-size: clamp(22px, 3.2vw, 34px);margin-bottom:10px;text-align:center;font-family: 'Gotham XNarrow', sans-serif;font-weight:900;letter-spacing:0.4px;line-height:1.3;}
     .sub{color:var(--muted);margin-bottom:18px;text-align:center;font-family: 'PT Sans', sans-serif;}
     .grid{display:grid;grid-template-columns: repeat(3, 1fr);gap: var(--space)}
@@ -103,6 +104,46 @@
     .socials{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
     .social{background:#fff;color:var(--brand-700);border:1px solid rgba(15,23,42,.08);border-radius:999px;padding:10px 14px;text-decoration:none;font-weight:700;font-family: 'PT Sans', sans-serif;box-shadow: var(--shadow-sm)}
     .social:hover{box-shadow: var(--shadow)}
+    .video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;background:#000;border-radius: var(--radius);box-shadow: var(--shadow-sm)}
+    .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius: var(--radius)}
+    .video-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background: rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;border-radius: var(--radius);z-index:10}
+    .video-notice{background:#fff;padding:24px;border-radius: var(--radius);max-width:400px;text-align:center;margin:20px}
+    .video-notice h3{font-family: 'Gotham XNarrow', sans-serif;font-weight:900;margin-bottom:12px;color: var(--text)}
+    .video-notice p{margin-bottom:16px;font-size:0.9rem;line-height:1.5;color: var(--muted)}
+    .video-notice a{color: var(--brand);text-decoration:none;font-weight:700}
+    .video-notice a:hover{text-decoration:underline}
+    .btn-video-accept{background: var(--brand);color:#fff;padding:12px 18px;border-radius:999px;border:none;font-weight:700;font-family: 'PT Sans', sans-serif;cursor:pointer;transition: all 0.3s ease}
+    .btn-video-accept:hover{background: var(--brand-700)}
+    .pdf-section{background:#fff;border-radius: var(--radius);border:1px solid rgba(15,23,42,.06);box-shadow: var(--shadow-sm);overflow:hidden;margin-top:24px}
+    .pdf-toggle{width:100%;background: var(--accent-yellow);color: var(--brand-700);border:none;padding:16px 20px;font-size:1.1rem;font-weight:700;font-family: 'Gotham XNarrow', sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition: all 0.3s ease}
+    .pdf-toggle:hover{filter: brightness(0.98)}
+    .pdf-toggle::after{content: '▼';transform: rotate(0deg);transition: transform 0.3s ease}
+    .pdf-toggle.active::after{transform: rotate(180deg)}
+    .pdf-content{max-height:0;overflow:hidden;transition: max-height 0.4s ease-out}
+    .pdf-content.open{max-height:800px}
+    .pdf-viewer{width:100%;height:600px;border:none;background:#f5f5f5;padding:10px}
+    @media (max-width: 768px){
+      .pdf-viewer{height:500px;padding:5px}
+      .pdf-content.open{max-height:520px}
+      .pdf-toggle{padding:14px 16px;font-size:1rem}
+    }
+    @media (max-width: 480px){
+      .pdf-viewer{height:400px;padding:5px}
+      .pdf-content.open{max-height:420px}
+      .pdf-toggle{padding:12px 14px;font-size:0.95rem}
+    }
+    .pdf-fallback{padding:20px;text-align:center;background: var(--surface)}
+    .pdf-fallback a{color: var(--brand);text-decoration:none;font-weight:700}
+    .pdf-fallback a:hover{text-decoration:underline}
+    @media (max-width: 768px){
+      .pdf-fallback{padding:16px 12px;font-size:0.9rem}
+      .pdf-fallback p{line-height:1.5}
+    }
+    @media (max-width: 480px){
+      .pdf-fallback{padding:14px 10px;font-size:0.85rem}
+      .pdf-fallback p{line-height:1.6}
+      .pdf-fallback a{display:inline-block;margin-top:4px}
+    }
     footer{background: var(--brand);color:#fff;text-align:center}
     .foot{max-width:var(--container);margin:0 auto;padding: 12px 20px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;font-size:0.9rem;font-family: 'PT Sans', sans-serif;}
     .foot a{color:#fff;opacity:.95;text-decoration:none}
@@ -123,6 +164,29 @@
         top: 0,
         behavior: 'smooth'
       });
+    }
+
+    function togglePDF() {
+      const toggle = document.querySelector('.pdf-toggle');
+      const content = document.querySelector('.pdf-content');
+      const iframe = content.querySelector('.pdf-viewer');
+      
+      toggle.classList.toggle('active');
+      content.classList.toggle('open');
+      
+      // Lade oder entlade das PDF je nach Zustand
+      if (content.classList.contains('open')) {
+        iframe.src = 'assets/pdf/Marcel_Giesswein_fleyer.pdf';
+      } else {
+        iframe.src = '';
+      }
+    }
+
+    function loadVideo() {
+      const overlay = document.getElementById('videoOverlay');
+      
+      // Verstecke das Overlay - Video ist bereits geladen
+      overlay.style.display = 'none';
     }
   </script>
 </head>
@@ -154,6 +218,23 @@
     </div>
   </section>
 
+  <section id="programm">
+    <div class="pdf-section">
+      <button class="pdf-toggle" onclick="togglePDF()">
+        Jetzt mein Wahlprogramm lesen
+      </button>
+      <div class="pdf-content">
+        <iframe 
+          class="pdf-viewer" 
+          type="application/pdf">
+        </iframe>
+        <div class="pdf-fallback">
+          <p>Ihr Browser unterstützt keine PDF-Anzeige. <a href="assets/pdf/Marcel_Giesswein_fleyer.pdf" target="_blank">Klicken Sie hier, um das PDF herunterzuladen</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="schwerpunkte">
     <h2>Meine Schwerpunkte</h2>
     <p class="sub">Konkrete Vorhaben für ein lebenswertes, zukunftsfestes Schwelm.</p>
@@ -174,6 +255,30 @@
       <div class="card"><strong>Progressiv & Klar</strong><p>„Klimaschutz ist kein ‚kann, wenn es passt', sondern eine absolute Notwendigkeit!"</p></div>
       <div class="card"><strong>Grün & Bürgernah</strong><p>„Heimat gestalten. Miteinander leben."</p></div>
       <div class="card"><strong>Mutig & Motiviert</strong><p>„Verändern, was bremst. Fördern, was trägt."</p></div>
+    </div>
+  </section>
+
+  <section id="podcast">
+    <h2>Podcast</h2>
+    <p class="sub">Erfahren Sie mehr über meine Visionen für Schwelm in diesem Podcast</p>
+    <div class="video-container">
+      <div class="video-overlay" id="videoOverlay">
+        <div class="video-notice">
+          <h3>Datenschutzhinweis</h3>
+          <p>Durch das Abspielen des Videos werden Daten an YouTube übertragen. Weitere Informationen finden Sie in der <a href="https://policies.google.com/privacy" target="_blank">Datenschutzerklärung von YouTube</a>.</p>
+          <button class="btn-video-accept" onclick="loadVideo()">Video abspielen</button>
+        </div>
+      </div>
+      <iframe 
+        id="podcastVideo"
+        width="560" 
+        height="315" 
+        src="https://www.youtube-nocookie.com/embed/nvI1sXo4pgg" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
     </div>
   </section>
 
